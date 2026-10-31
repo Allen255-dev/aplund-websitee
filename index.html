@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aplund | Bespoke LED Mirrors &amp; Statement Furniture — Lagos &amp; Abuja</title>
+<meta name="description" content="Aplund crafts custom LED mirrors, illuminated pop art, and statement streetwear furniture. Handcrafted in Lagos and Abuja studios with nationwide delivery across Nigeria.">
+<meta name="theme-color" content="#070a13">
+
+<!-- Fonts: Plus Jakarta Sans for ultra-clean tech luxury -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Scroll-driven progress indicator (modern-web-guidance) -->
+<div id="scrollProgress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+<!-- ── AMBIENT STUDIO LIGHTING & PARTICLES ───────────────── -->
+<div class="ambient-background" aria-hidden="true">
+  <canvas id="ambientCanvas" class="ambient-particles-canvas"></canvas>
+  <div class="light-beam"></div>
+  <div class="blue-glow-top"></div>
+  <div class="cyan-glow-right"></div>
+  <div class="subtle-grid"></div>
+</div>
+
+<!-- ── HEADER NAVIGATION ─────────────────────────────────── -->
+<header id="header">
+  <div class="wrap nav-container">
+    <a class="nav-brand" href="#top" aria-label="Aplund homepage">
+      <div class="brand-icon-hex">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="brand-text">Aplund<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav id="nav" aria-label="Main Navigation">
+      <a href="#top" class="nav-link active">Home</a>
+      <a href="#products" class="nav-link">Collection</a>
+      <a href="#customizer" class="nav-link">Customizer</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-cta-wrapper">
+      <a class="btn-pill btn-pill-primary" href="#customizer">
+        <span>Get Started</span>
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="mobile-toggle" id="burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-backdrop" id="nav-overlay" aria-hidden="true"></div>
+
+<!-- ── HERO SECTION (BIZNEXT STYLE) ──────────────────────── -->
+<main id="top">
+<section class="hero-section" aria-label="Hero">
+  <div class="wrap hero-wrap">
+
+    <!-- Top Headline Block -->
+    <div class="hero-header-block">
+      <!-- Live Workshop Pulse Badge -->
+      <div class="live-activity-badge">
+        <span class="live-pulse-dot"></span>
+        <span class="activity-text">Studios Active in Lagos &amp; Abuja</span>
+        <span class="activity-dot">•</span>
+        <span class="activity-sub">5,700+ on TikTok</span>
+        <span class="activity-dot">•</span>
+        <span class="activity-sub">Orders Open</span>
+      </div>
+
+      <div class="eyebrow-line">
+        <span class="line-wing left"></span>
+        <span class="eyebrow-text">Bespoke Illumination &amp; Design</span>
+        <span class="line-wing right"></span>
+      </div>
+
+      <h1 class="hero-main-title">
+        Custom LED Mirrors &amp;<br>
+        <span class="electric-gradient">Statement Furniture</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Modern Handcrafted Layouts for Luxury Homes, Barbershops, Salons &amp; Studios
+      </p>
+    </div>
+
+    <!-- Clean Hero CTA Buttons -->
+    <div class="hero-actions-group">
+      <a class="btn-pill btn-pill-primary" href="#products">
+        <span>Explore Collection</span>
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a class="btn-pill btn-pill-outline" href="#customizer">
+        <span>Get a Quick Quote</span>
+      </a>
+    </div>
+
+    <!-- Interactive Room Ambience Switcher -->
+    <div class="room-ambience-bar" id="ambienceBar">
+      <span class="ambience-label">Interactive Lighting:</span>
+      <div class="ambience-pill-container">
+        <button type="button" class="ambience-toggle active" id="dayLightBtn" data-mode="day">
+          <span>☀️ Studio View</span>
+        </button>
+        <button type="button" class="ambience-toggle" id="nightGlowBtn" data-mode="night">
+          <span>🌙 Night Neon Glow</span>
+          <span class="glow-hint-pulse"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Tagline Strip -->
+    <div class="hero-bottom-tagline">
+      <span class="tagline-dash">—</span>
+      <span>Modern</span>
+      <span class="tagline-dot">•</span>
+      <span>Handcrafted</span>
+      <span class="tagline-dot">•</span>
+      <span>Shatter-Safe</span>
+      <span class="tagline-dot">•</span>
+      <span>Lagos &amp; Abuja</span>
+      <span class="tagline-dash">—</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── MARQUEE TICKER ────────────────────────────────────── -->
+<div class="marquee-wrapper" aria-hidden="true">
+  <div class="marquee-track">
+    <span>★ BESPOKE LED MIRRORS</span>
+    <span>★ POP ART WALL ILLUMINATIONS</span>
+    <span>★ DRIP SNEAKER WARDROBES</span>
+    <span>★ VIRAL INSTA POST FRAMES</span>
+    <span>★ CONTINENT MAP SILHOUETTES</span>
+    <span>★ SHUTTER-PROOF 5MM GLASS</span>
+    <span>★ PLUG &amp; PLAY 220V READY</span>
+    <span>★ NATIONWIDE CRATE FREIGHT</span>
+    <span>★ BESPOKE LED MIRRORS</span>
+    <span>★ POP ART WALL ILLUMINATIONS</span>
+    <span>★ DRIP SNEAKER WARDROBES</span>
+    <span>★ VIRAL INSTA POST FRAMES</span>
+    <span>★ CONTINENT MAP SILHOUETTES</span>
+    <span>★ SHUTTER-PROOF 5MM GLASS</span>
+    <span>★ PLUG &amp; PLAY 220V READY</span>
+    <span>★ NATIONWIDE CRATE FREIGHT</span>
+  </div>
+</div>
+
+<!-- ── PRODUCT COLLECTION SECTION ────────────────────────── -->
+<section id="products" class="section-container">
+  <div class="wrap">
+    <div class="section-title-wrap">
+      <div class="section-eyebrow">PORTFOLIO &amp; BUILDS</div>
+      <h2 class="section-heading">Featured Real Builds</h2>
+      <p class="section-desc">
+        Explore pieces handcrafted in our Lagos &amp; Abuja workshops. Tap any card to view specs or send an enquiry directly to our production team on WhatsApp.
+      </p>
+    </div>
+
+    <!-- Filter Buttons in Electric Blue Reference Style -->
+    <div class="collection-filter-tabs" id="collectionFilters" role="tablist" aria-label="Build categories">
+      <button class="filter-tab active" role="tab" aria-selected="true" data-filter="all">All Builds</button>
+      <button class="filter-tab" role="tab" aria-selected="false" data-filter="mirrors">LED Mirrors</button>
+      <button class="filter-tab" role="tab" aria-selected="false" data-filter="popart">Pop Art &amp; Custom</button>
+      <button class="filter-tab" role="tab" aria-selected="false" data-filter="furniture">Drip Furniture</button>
+    </div>
+
+    <!-- Grid Container -->
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Generated via JS with real images -->
+    </div>
+  </div>
+</section>
+
+<!-- ── INTERACTIVE CUSTOMIZER / ESTIMATOR ───────────────── -->
+<section id="customizer" class="section-container customizer-area">
+  <div class="wrap">
+    <div class="customizer-layout">
+
+      <!-- Left Column: Live Interactive 3D Card Preview -->
+      <div class="customizer-preview-col">
+        <div class="section-eyebrow">QUICK ORDER</div>
+        <h2 class="section-heading-left">Get an Instant Quote</h2>
+        <p class="section-desc-left">
+          Select your model and size to see the instant price estimate, then tap to send your brief on WhatsApp.
+        </p>
+
+        <div class="live-config-card" id="liveConfigCard">
+          <div class="config-ambient-glow" id="configGlow"></div>
+          <div class="config-visual">
+            <img id="configPreviewImg" src="images/insta-mirror.jpg" alt="Selected build preview" class="config-img">
+            <div class="config-badge-top" id="configBadge">Insta Mirror • 5ft Standard</div>
+          </div>
+
+          <div class="config-footer-data">
+            <div class="config-meta-item">
+              <span class="meta-label">Selected Build</span>
+              <strong class="meta-val" id="configModelLabel">Viral Insta LED Mirror</strong>
+            </div>
+            <div class="config-meta-item right">
+              <span class="meta-label">Estimated Price</span>
+              <strong class="meta-val price-accent" id="configPriceLabel">₦25,000 - ₦35,000</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Simple, Frictionless Configurator -->
+      <div class="customizer-controls-col">
+        <form class="configurator-glass-form" onsubmit="event.preventDefault();">
+          
+          <!-- 1. Pick Model -->
+          <div class="simple-config-group">
+            <label class="simple-label">Choose Product</label>
+            <div class="simple-chips-grid" id="modelSelectGrid">
+              <button type="button" class="simple-chip active" data-model="Insta LED Mirror" data-img="images/insta-mirror.jpg" data-base="25000">
+                <span class="chip-icon">📱</span>
+                <span class="chip-name">Insta Mirror</span>
+                <span class="chip-price">From ₦25k</span>
+              </button>
+              <button type="button" class="simple-chip" data-model="Krusty Pop Art" data-img="images/krusty-mirror.jpg" data-base="30000">
+                <span class="chip-icon">🤡</span>
+                <span class="chip-name">Pop Art Krusty</span>
+                <span class="chip-price">From ₦30k</span>
+              </button>
+              <button type="button" class="simple-chip" data-model="Africa Silhouette" data-img="images/africa-mirror.jpg" data-base="35000">
+                <span class="chip-icon">🌍</span>
+                <span class="chip-name">Africa Silhouette</span>
+                <span class="chip-price">From ₦35k</span>
+              </button>
+              <button type="button" class="simple-chip" data-model="Nike Drip Locker" data-img="images/nike-cabinet.jpg" data-base="75000">
+                <span class="chip-icon">👟</span>
+                <span class="chip-name">Nike Drip Locker</span>
+                <span class="chip-price">Custom Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Pick Size -->
+          <div class="simple-config-group">
+            <label class="simple-label">Select Size</label>
+            <div class="simple-size-row" id="sizeSelectGrid">
+              <button type="button" class="simple-size-btn" data-size="Compact (3ft)" data-mult="1.0">
+                <span>3ft Compact</span>
+              </button>
+              <button type="button" class="simple-size-btn active" data-size="Standard (5ft)" data-mult="1.2">
+                <span>5ft Standard</span>
+                <small class="pill-tag">Popular</small>
+              </button>
+              <button type="button" class="simple-size-btn" data-size="Full-Length (6ft+)" data-mult="1.5">
+                <span>6ft+ Full Length</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Optional Note / Custom Handle -->
+          <div class="simple-config-group">
+            <label class="simple-label" for="customHandleField">Custom Handle / Name <span class="label-optional">(Optional)</span></label>
+            <input 
+              type="text" 
+              id="customHandleField" 
+              class="studio-input" 
+              placeholder="e.g. @yourname or your business name"
+              maxlength="40"
+            >
+          </div>
+
+          <!-- 4. Direct One-Click WhatsApp Action -->
+          <button type="button" class="btn-pill btn-pill-primary btn-full-width btn-order-action" id="sendCustomBriefBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.04-3.77-.24-.39A9.96 9.96 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.28l-1.97-.56a.75.75 0 00-.72.18l-.56.56a.75.75 0 01-.82.16C12.32 14.6 10.4 12.68 9.94 11.6a.75.75 0 01.16-.82l.56-.56a.75.75 0 00.18-.72l-.56-1.97a.75.75 0 00-.71-.53H8.5a.75.75 0 00-.75.75c0 5.01 4.24 9 9 9a.75.75 0 00.75-.75v-1.07a.75.75 0 00-.53-.71z"/>
+            </svg>
+            <span>Chat &amp; Order on WhatsApp</span>
+          </button>
+          
+          <div class="simple-trust-line">
+            <span>⚡ Fast replies • Free 3D design proof • Nationwide shipping</span>
+          </div>
+        </form>
+      </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.04-3.77-.24-.39A9.96 9.96 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.28l-1.97-.56a.75.75 0 00-.72.18l-.56.56a.75.75 0 01-.82.16C12.32 14.6 10.4 12.68 9.94 11.6a.75.75 0 01.16-.82l.56-.56a.75.75 0 00.18-.72l-.56-1.97a.75.75 0 00-.71-.53H8.5a.75.75 0 00-.75.75c0 5.01 4.24 9 9 9a.75.75 0 00.75-.75v-1.07a.75.75 0 00-.53-.71z"/>
+            </svg>
+            <span>Send Custom Spec on WhatsApp</span>
+          </button>
+          <p class="config-security-note">
+            🛡️ 100% Free consultation. We confirm your digital 3D mockup and timeline before production.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW AN ORDER WORKS ────────────────────────────────── -->
+<section id="process" class="section-container">
+  <div class="wrap">
+    <div class="section-title-wrap">
+      <div class="section-eyebrow">SEAMLESS PRODUCTION</div>
+      <h2 class="section-heading">How an Order Works</h2>
+      <p class="section-desc">Clear communication, firm timeline, and digital mockup approval before work begins.</p>
+    </div>
+
+    <div class="process-cards-grid">
+      <div class="process-glass-card">
+        <div class="process-step-num">01</div>
+        <h3>Send Your Brief</h3>
+        <p>Pick a style or send photos of your space. Tell us your ideal dimensions, desired glow color, and brand handle.</p>
+      </div>
+      <div class="process-glass-card">
+        <div class="process-step-num">02</div>
+        <h3>Approve Digital Proof</h3>
+        <p>We send you a detailed mockup showing exact measurements, custom etching, and final invoice price for sign-off.</p>
+      </div>
+      <div class="process-glass-card">
+        <div class="process-step-num">03</div>
+        <h3>Craft &amp; Delivery</h3>
+        <p>Our artisans build your piece in Lagos or Abuja. Collect at the studio or receive protected wooden crate delivery anywhere in Nigeria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CRAFTSMANSHIP SPOTLIGHT ───────────────────────────── -->
+<section class="section-container craft-section">
+  <div class="wrap">
+    <div class="section-title-wrap">
+      <div class="section-eyebrow">BUILT FOR IMPACT</div>
+      <h2 class="section-heading">Industrial Grade Craftsmanship</h2>
+      <p class="section-desc">Engineered for durability, high-definition mirror selfies, and zero LED flicker.</p>
+    </div>
+
+    <div class="craft-grid">
+      <div class="craft-card">
+        <div class="craft-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4>High-CRI Uniform Halo</h4>
+        <p>Ultra-dense LED strip lighting with uniform ambient glow, zero dark spots, and high color rendering that flatters photos and videos.</p>
+      </div>
+
+      <div class="craft-card">
+        <div class="craft-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10M7 12h10M7 17h10"/></svg>
+        </div>
+        <h4>Precision CNC Laser Cutouts</h4>
+        <p>Clean phone silhouettes, continental borders, anime characters, and intricate typography cut with millimeter accuracy.</p>
+      </div>
+
+      <div class="craft-card">
+        <div class="craft-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>5mm Shatter-Resistant Glass</h4>
+        <p>Premium copper-free silvered mirror glass with an anti-shatter safety backing layer for commercial and residential safety.</p>
+      </div>
+
+      <div class="craft-card">
+        <div class="craft-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <h4>Plug &amp; Play Setup</h4>
+        <p>Shipped with standard Nigerian 3-pin power adapter, discreet cord routing, and heavy-duty pre-installed mounting brackets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOCIAL REVIEWS ────────────────────────────────────── -->
+<section id="reviews" class="section-container">
+  <div class="wrap">
+    <div class="section-title-wrap">
+      <div class="section-eyebrow">TIKTOK COMMUNITY</div>
+      <h2 class="section-heading">Loved by 5,700+ Followers</h2>
+      <p class="section-desc">
+        Follow <a href="https://www.tiktok.com/@aplundcompany" target="_blank" rel="noopener noreferrer" class="link-blue">@aplundcompany on TikTok</a> to watch our builds and client unboxings.
+      </p>
+    </div>
+
+    <div class="reviews-triplet">
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <p class="review-quote">"The Insta Mirror in my Lekki apartment has become the absolute #1 photo spot for everyone who visits. The LED backlight quality is unmatched, zero flicker on camera!"</p>
+        <div class="review-user">
+          <strong>Chioma A.</strong>
+          <span>Lekki Phase 1, Lagos</span>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <p class="review-quote">"Ordered 4 custom branded mirrors for our barbershop in Wuse 2, Abuja. The laser-etched shop logo and lighting makes each haircut look 10x crisper on Instagram."</p>
+        <div class="review-user">
+          <strong>Tunde O.</strong>
+          <span>Studio Lead, Abuja Barbers</span>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <div class="stars">★★★★★</div>
+        <p class="review-quote">"The Africa silhouette mirror arrived in Port Harcourt in a reinforced wooden crate without a single scratch. It completely transformed our dining room space."</p>
+        <div class="review-user">
+          <strong>Dr. Kingsley E.</strong>
+          <span>Port Harcourt, Rivers State</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ACCORDION ─────────────────────────────────────── -->
+<section id="faq" class="section-container">
+  <div class="wrap faq-wrapper">
+    <div class="section-title-wrap">
+      <div class="section-eyebrow">COMMON QUESTIONS</div>
+      <h2 class="section-heading">Frequently Asked Questions</h2>
+      <p class="section-desc">Everything you need to know about pricing, customization, and nationwide delivery.</p>
+    </div>
+
+    <div class="faq-accordion-list">
+      <details class="faq-card">
+        <summary class="faq-header">
+          <span>How much do custom mirrors cost?</span>
+          <span class="faq-icon-arrow" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-content">
+          <p>Our custom LED mirrors start from <strong>₦25,000 to ₦30,000</strong> for compact and standard formats (such as the viral Insta Mirror or Krusty Pop Art). Larger full-length mirrors and custom drip furniture (like sneaker cabinets) are quoted based on exact dimensions and hardware. We confirm a fixed written quote before payment.</p>
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-header">
+          <span>How safe is delivery outside Lagos &amp; Abuja?</span>
+          <span class="faq-icon-arrow" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-content">
+          <p>We deliver nationwide to all 36 states! For inter-state transit, all pieces are packed with multi-layer high-density bubble foam, reinforced corner guards, and encased in heavy-duty custom wooden shipping crates to guarantee zero transit breakage.</p>
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-header">
+          <span>Can I personalize it with my own Instagram handle or business logo?</span>
+          <span class="faq-icon-arrow" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-content">
+          <p>Yes, 100%! You can specify any Instagram handle, business name, custom phrase, or send us your vector/PNG logo file on WhatsApp. We will integrate it into the 3D design proof for your confirmation.</p>
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-header">
+          <span>How does the mirror plug in and turn on?</span>
+          <span class="faq-icon-arrow" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-content">
+          <p>Every mirror includes a high-efficiency power adapter that plugs into any standard 220V wall socket. We also offer options for integrated smart touch sensors on the glass, dimmer controllers, or direct wall-switch hardwiring.</p>
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary class="faq-header">
+          <span>Is Aplund an officially registered business?</span>
+          <span class="faq-content-inner"></span>
+          <span class="faq-icon-arrow" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-content">
+          <p>Yes! Aplund is registered with the Corporate Affairs Commission (CAC) of Nigeria. You can view our certificate, real customer reviews, and finished video builds on our verified TikTok page (<a href="https://www.tiktok.com/@aplundcompany" target="_blank" rel="noopener noreferrer" class="link-blue">@aplundcompany</a>).</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT SECTION ───────────────────────────────────── -->
+<section id="contact" class="section-container contact-section">
+  <div class="wrap">
+    <div class="contact-card-frame">
+      <div class="contact-info-col">
+        <div class="section-eyebrow">LET'S BUILD</div>
+        <h2 class="contact-card-title">Ready to Upgrade Your Space?</h2>
+        <p class="contact-card-text">
+          Fill out this form or chat directly on WhatsApp. We reply promptly with mockups, sizing advice, and pricing.
+        </p>
+
+        <div class="channel-pills">
+          <a class="channel-pill-item" href="https://wa.me/2347070276427?text=Hello%20Aplund%2C%20I%20would%20like%20to%20order%20a%20custom%20piece." target="_blank" rel="noopener noreferrer">
+            <div class="channel-pill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.04-3.77-.24-.39A9.96 9.96 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.28l-1.97-.56a.75.75 0 00-.72.18l-.56.56a.75.75 0 01-.82.16C12.32 14.6 10.4 12.68 9.94 11.6a.75.75 0 01.16-.82l.56-.56a.75.75 0 00.18-.72l-.56-1.97a.75.75 0 00-.71-.53H8.5a.75.75 0 00-.75.75c0 5.01 4.24 9 9 9a.75.75 0 00.75-.75v-1.07a.75.75 0 00-.53-.71z"/></svg>
+            </div>
+            <div>
+              <span class="channel-pill-tag">DIRECT WHATSAPP</span>
+              <strong class="channel-pill-val">+234 707 027 6427</strong>
+            </div>
+          </a>
+
+          <div class="channel-pill-item">
+            <div class="channel-pill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="channel-pill-tag">WORKSHOPS</span>
+              <strong class="channel-pill-val">Lagos &amp; Abuja Studios</strong>
+            </div>
+          </div>
+
+          <a class="channel-pill-item" href="https://www.tiktok.com/@aplundcompany" target="_blank" rel="noopener noreferrer">
+            <div class="channel-pill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.79a8.18 8.18 0 004.77 1.52V6.88a4.85 4.85 0 01-1-.19z"/></svg>
+            </div>
+            <div>
+              <span class="channel-pill-tag">TIKTOK COMMUNITY</span>
+              <strong class="channel-pill-val">@aplundcompany</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-col">
+        <form id="quoteForm" class="contact-actual-form" novalidate>
+          <div class="form-row-duo">
+            <div class="form-field">
+              <label for="quoteName">Full Name</label>
+              <input type="text" id="quoteName" name="name" autocomplete="name" placeholder="e.g. Samuel Ade" required>
+              <span class="form-field-error" id="quoteNameError" role="alert"></span>
+            </div>
+            <div class="form-field">
+              <label for="quoteCity">City</label>
+              <select id="quoteCity" name="city" autocomplete="address-level2">
+                <option value="Lagos">Lagos</option>
+                <option value="Abuja">Abuja</option>
+                <option value="Port Harcourt">Port Harcourt</option>
+                <option value="Ibadan">Ibadan</option>
+                <option value="Other Nigeria">Other State</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="quoteProduct">Product of Interest</label>
+            <select id="quoteProduct" name="product">
+              <option value="Insta Mirror (₦25k+)">Insta LED Mirror (From ₦25,000)</option>
+              <option value="Pop Art Krusty Mirror (₦30k+)">Pop Art Krusty Neon Mirror (From ₦30,000)</option>
+              <option value="Africa Silhouette LED Mirror">Africa Silhouette LED Mirror (From ₦35,000)</option>
+              <option value="Nike Drip Sneaker Cabinet">Nike Drip Sneaker Locker</option>
+              <option value="Custom Business / Barbershop Mirror">Custom Barbershop / Salon Mirror</option>
+              <option value="Other Custom Artwork / Furniture">Other Custom Artwork / Furniture</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quoteDetails">Details / Custom Requirements</label>
+            <textarea id="quoteDetails" name="details" rows="3" placeholder="Dimensions, handle text, preferred glow color, or delivery address..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-pill btn-pill-primary btn-full-width">
+            <span>Send Enquiry on WhatsApp</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="form-footnote">Opens WhatsApp with your request pre-formatted.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand-box">
+      <div class="nav-brand">
+        <div class="brand-icon-hex">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="brand-text">Aplund<span class="brand-dot">.</span></span>
+      </div>
+      <p class="footer-summary">
+        Designs for impact. Handcrafted bespoke LED mirrors and custom statement furniture. Registered with the Corporate Affairs Commission (CAC).
+      </p>
+      <div class="footer-pills">
+        <span>📍 Lagos Studio</span>
+        <span>•</span>
+        <span>📍 Abuja Studio</span>
+        <span>•</span>
+        <span>📦 Nationwide Delivery</span>
+      </div>
+    </div>
+
+    <div class="footer-links-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="#products">LED Mirrors &amp; Builds</a></li>
+        <li><a href="#customizer">Customizer Studio</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#reviews">Showcase &amp; Reviews</a></li>
+        <li><a href="#faq">Common Questions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links-col">
+      <h5>Direct Contact</h5>
+      <ul>
+        <li><a href="https://wa.me/2347070276427" target="_blank" rel="noopener noreferrer">WhatsApp: 0707 027 6427</a></li>
+        <li><a href="tel:+2347070276427">Phone: 0707 027 6427</a></li>
+        <li><a href="https://www.tiktok.com/@aplundcompany" target="_blank" rel="noopener noreferrer">TikTok: @aplundcompany</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-legal-bar">
+    <div class="wrap legal-flex">
+      <span>© 2026 Aplund Design Company. All rights reserved.</span>
+      <span>Corporate Affairs Commission (CAC) Registered</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── PRODUCT DETAILS MODAL (LIGHTBOX) ─────────────────── -->
+<!-- Following modern-web-guidance for <dialog closedby="any"> -->
+<dialog id="productDialog" class="lightbox-dialog" closedby="any" aria-labelledby="dialogTitle">
+  <div class="dialog-content-wrap">
+    <button type="button" class="dialog-exit-btn" id="dialogCloseBtn" aria-label="Close product preview">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div class="dialog-layout">
+      <div class="dialog-photo-frame">
+        <div class="dialog-ambient-glow" id="dialogGlow"></div>
+        <img id="dialogImg" src="images/insta-mirror.jpg" alt="High resolution build photo" class="dialog-photo">
+      </div>
+
+      <div class="dialog-info-pane">
+        <span class="dialog-tag" id="dialogCategory">LED MIRROR</span>
+        <h2 id="dialogTitle" class="dialog-heading">Product Title</h2>
+        <div class="dialog-price-text" id="dialogPrice">₦25,000</div>
+
+        <p class="dialog-paragraph" id="dialogDesc">Detailed description of this custom piece.</p>
+
+        <div class="dialog-spec-table">
+          <div class="spec-entry">
+            <span>Crafting Time:</span>
+            <strong id="dialogTime">3 - 5 Business Days</strong>
+          </div>
+          <div class="spec-entry">
+            <span>Backlight Aura:</span>
+            <strong id="dialogGlowType">Warm Amber (3000K) or RGB</strong>
+          </div>
+          <div class="spec-entry">
+            <span>Personalization:</span>
+            <strong id="dialogCustom">Handle, Name &amp; Logos Supported</strong>
+          </div>
+          <div class="spec-entry">
+            <span>Delivery:</span>
+            <strong>Lagos, Abuja &amp; Nationwide Protected Crate</strong>
+          </div>
+        </div>
+
+        <a id="dialogOrderBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-primary btn-full-width">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.04-3.77-.24-.39A9.96 9.96 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.28l-1.97-.56a.75.75 0 00-.72.18l-.56.56a.75.75 0 01-.82.16C12.32 14.6 10.4 12.68 9.94 11.6a.75.75 0 01.16-.82l.56-.56a.75.75 0 00.18-.72l-.56-1.97a.75.75 0 00-.71-.53H8.5a.75.75 0 00-.75.75c0 5.01 4.24 9 9 9a.75.75 0 00.75-.75v-1.07a.75.75 0 00-.53-.71z"/></svg>
+          <span>Order This on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ── FLOATING WHATSAPP PILL ──────────────────────────── -->
+<a 
+  href="https://wa.me/2347070276427?text=Hello%20Aplund%2C%20I%20am%20interested%20in%20ordering%20a%20custom%20piece." 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="floating-whatsapp-pill"
+  aria-label="Chat with Aplund on WhatsApp"
+>
+  <span class="whatsapp-ping-circle"></span>
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.04-3.77-.24-.39A9.96 9.96 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm5.47-7.28l-1.97-.56a.75.75 0 00-.72.18l-.56.56a.75.75 0 01-.82.16C12.32 14.6 10.4 12.68 9.94 11.6a.75.75 0 01.16-.82l.56-.56a.75.75 0 00.18-.72l-.56-1.97a.75.75 0 00-.71-.53H8.5a.75.75 0 00-.75.75c0 5.01 4.24 9 9 9a.75.75 0 00.75-.75v-1.07a.75.75 0 00-.53-.71z"/></svg>
+  <span class="whatsapp-label-text">Chat with Studio</span>
+</a>
+
+<!-- ── FLOATING LIVE ACTIVITY TOAST ────────────────────── -->
+<div class="live-activity-toast" id="liveToast" aria-live="polite" role="status">
+  <div class="toast-avatar">
+    <span class="toast-pulse-core"></span>
+    <span class="toast-emoji">⚡</span>
+  </div>
+  <div class="toast-content">
+    <div class="toast-header-row">
+      <strong class="toast-title" id="toastTitle">New Order Inquiry</strong>
+      <span class="toast-time" id="toastTime">Just now</span>
+    </div>
+    <span class="toast-desc" id="toastDesc">A client in Lekki, Lagos just customized the Viral Insta Mirror.</span>
+  </div>
+  <button type="button" class="toast-close" id="toastCloseBtn" aria-label="Dismiss notification">&times;</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
